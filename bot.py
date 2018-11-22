@@ -10,7 +10,7 @@ from bottle import route, run, template
 
 app = bottle.default_app()
 
-@route('/')
+@route('/', GET)
 def teste():
     autopy.mouse.move(0,0)
     time.sleep(1)
