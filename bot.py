@@ -1,7 +1,9 @@
 import time
 import pyautogui
+from pyvirtualdisplay import Display
 
-time.sleep(1)
-pyautogui.moveTo(0, 0)
-time.sleep(1)
-pyautogui.moveTo(200, 200)
+with Display():
+  time.sleep(1)
+  pyautogui.moveTo(0, 0)
+  time.sleep(1)
+  pyautogui.moveTo(200, 200)
