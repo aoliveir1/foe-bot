@@ -1,7 +1,7 @@
 import time
-from pymouse import PyMouse
+import pyautogui
 
-mouse = PyMouse()
-mouse.move(0,0)
 time.sleep(1)
-mouse.move(100,100)
+pyautogui.moveTo(0, 0)
+time.sleep(1)
+pyautogui.moveTo(200, 200)
