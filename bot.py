@@ -6,16 +6,16 @@ import autopy
 from pyvirtualdisplay import Display
 from selenium import webdriver
 import bottle
-from bottle import route, run
+from bottle import route, run, template
 
 app = bottle.default_app()
 
-@route('/', 'GET')
+@route('/')
 def teste():
     autopy.mouse.move(0,0)
     time.sleep(1)
-    autopy.mouse.move(0,0)
-    return 'Oi!'
+    autopy.mouse.move(100,300)
+    return template('Oi!')
 
 @route('/t', 'GET')
 def pendentes():
