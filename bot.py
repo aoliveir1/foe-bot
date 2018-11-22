@@ -1,7 +1,7 @@
 from pyvirtualdisplay import Display
 from selenium import webdriver
 
-with Display():
+with Display(visible=0, size=(800, 600)):
   browser = webdriver.Firefox()
   
   try:
