@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 from pyvirtualdisplay import Display
 from selenium import webdriver
 import bottle
