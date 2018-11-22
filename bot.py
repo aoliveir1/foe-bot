@@ -2,6 +2,7 @@
 
 from pyvirtualdisplay import Display
 from selenium import webdriver
+import bottle
 from bottle import route, run
 
 app = bottle.default_app()
