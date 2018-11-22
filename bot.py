@@ -1,9 +1,7 @@
 import time
-import pyautogui
-from pyvirtualdisplay import Display
+import autopy
 
-with Display():
-  time.sleep(1)
-  pyautogui.moveTo(0, 0)
-  time.sleep(1)
-  pyautogui.moveTo(200, 200)
+time.sleep(1)
+autopy.mouse.move(0,0)
+time.sleep(1)
+autopy.mouse.move(200,200)
