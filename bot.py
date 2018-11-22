@@ -2,15 +2,24 @@
 
 from pyvirtualdisplay import Display
 from selenium import webdriver
+from bottle import route, run
 
-display = Display(visible=0, size=(800, 600))
-display.start()
+app = bottle.default_app()
 
-# now Firefox will run in a virtual display. 
-# you will not see the browser.
-browser = webdriver.Firefox()
-browser.get('http://www.google.com')
-print(browser.title)
-browser.quit()
+@route('/', 'GET')
+def pendentes():
+    display = Display(visible=0, size=(800, 600))
+    display.start()
 
-display.stop()
+    # now Firefox will run in a virtual display. 
+    # you will not see the browser.
+    browser = webdriver.Firefox()
+    browser.get('http://www.google.com')
+    print(browser.title)
+    browser.quit()
+
+    display.stop()
+
+    return 'Oi!'
+
+run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
