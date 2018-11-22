@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import time
 import autopy
 from pyvirtualdisplay import Display
 from selenium import webdriver
@@ -11,6 +12,9 @@ app = bottle.default_app()
 
 @route('/', 'GET')
 def teste():
+    autopy.mouse.move(0,0)
+    time.sleep(1)
+    autopy.mouse.move(0,0)
     return 'Oi!'
 
 @route('/t', 'GET')
