@@ -1,12 +1,16 @@
+#!/usr/bin/env python
+
 from pyvirtualdisplay import Display
 from selenium import webdriver
 
-with Display(visible=0, size=(800, 600)):
-  browser = webdriver.Firefox()
-  
-  try:
-    browser.get('https://br5.forgeofempires.com/')
-    browser.save_screenshot('screenshot.png')
-    print(browser.title)
-  finally:
-    browser.quit()
+display = Display(visible=0, size=(800, 600))
+display.start()
+
+# now Firefox will run in a virtual display. 
+# you will not see the browser.
+browser = webdriver.Firefox()
+browser.get('http://www.google.com')
+print(browser.title)
+browser.quit()
+
+display.stop()
