@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import autopy
 from pyvirtualdisplay import Display
 from selenium import webdriver
 import bottle
@@ -9,6 +10,10 @@ from bottle import route, run
 app = bottle.default_app()
 
 @route('/', 'GET')
+def teste():
+    return 'Oi!'
+
+@route('/t', 'GET')
 def pendentes():
     display = Display(visible=0, size=(800, 600))
     display.start()
