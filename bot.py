@@ -1,7 +1,12 @@
-import time
-import autopy
+from pyvirtualdisplay import Display
+from selenium import webdriver
 
-time.sleep(1)
-autopy.mouse.move(0,0)
-time.sleep(1)
-autopy.mouse.move(200,200)
+with Display():
+  browser = webdriver.Firefox()
+  
+  try:
+    browser.get('https://br5.forgeofempires.com/')
+    browser.save_screenshot('screenshot.png')
+    print(browser.title)
+  finally:
+    browser.quit()
